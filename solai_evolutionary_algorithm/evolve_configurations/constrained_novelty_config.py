@@ -3,7 +3,6 @@ from datetime import datetime
 import solai_evolutionary_algorithm.evolve_configurations.sol_metrics as sol_metrics
 import solai_evolutionary_algorithm.evolve_configurations.sol_properties_ranges as properties_ranges
 from solai_evolutionary_algorithm.crossovers.ability_swap_crossover import AbilitySwapCrossover
-from solai_evolutionary_algorithm.database.update_database_service import UpdateDatabaseService
 from solai_evolutionary_algorithm.evaluation.simulation.constrained_novelty_evaluation import \
     ConstrainedNoveltyEvaluation, InfeasibleObjective
 from solai_evolutionary_algorithm.evolution.evolver_config import EvolverConfig
@@ -102,7 +101,7 @@ def config(
         )),
         end_criteria=FixedGenerationsEndCriteria(generations=generations),
         evolver_listeners=[
-            UpdateDatabaseService(),
+            #UpdateDatabaseService(),
             PlotGenerationsLocalService(
                 hold_last_plot=False,
                 save_plot_filename=plot_filename
